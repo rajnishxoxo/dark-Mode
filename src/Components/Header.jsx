@@ -1,11 +1,13 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import theme from "../Context/theme";
 
 const Header = () => {
   const { background, setBackGround } = useContext(theme);
+  const [buttonText, setButtonText] = useState(true);
 
   const handleThemeChange = () => {
     setBackGround(!background);
+    setButtonText(!buttonText);
     console.log(background);
   };
   return (
@@ -24,7 +26,7 @@ const Header = () => {
         onClick={handleThemeChange}
         className="bg-orange-500 w-40 p-2 rounded"
       >
-        Dark-Mode
+        {buttonText ? "dark-mode" : "light-mode"}
       </button>
     </div>
   );

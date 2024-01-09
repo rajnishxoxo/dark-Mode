@@ -1,13 +1,14 @@
 import React from "react";
 import Header from "./Components/Header";
 import Body from "./Components/Body";
+import ThemeProvider from "./Context/ThemeProvider"
 
 const App = () => {
   return (
-    <div>
-      <Header/>
-      <Body/>
-    </div>
+    <ThemeProvider>
+      <Header />
+      <Body />
+    </ThemeProvider>
   );
 };
 
